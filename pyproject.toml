@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "ratelimit"
+version = "0.1.0"
+description = "Simple rate-limiting package"
+authors = ["Anton Lydike <me@antonlydike.de>"]
+license = "Apache-2.0"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.8.0"
+pytest = "^8.3.3"
+pyright = "^1.1.381"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+python_files = ["tests/*test_*.py"]
+python_classes = "Test_*"
+python_functions = "test_*"
+addopts = ["--durations=20", "--maxfail=5"]
+
+[tool.pyright]
+typeCheckingMode = "strict"
+"include" = ["ratelimit"]
